@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+    <!-- The JMS Connection Factory -->
+    <connector-connection-pool name="jms/acsQueueConnectionPool"
+                               resource-adapter-name="jmsra"
+                               connection-definition-name="javax.jms.QueueConnectionFactory"
+                               transaction-support="NoTransaction"/>
+    <connector-resource pool-name="jms/acsQueueConnectionPool"
+                        jndi-name="ConnectionFactory"/>
+
+    <!-- The JMS Queue -->
+    <admin-object-resource res-adapter="jmsra"
+                           res-type="javax.jms.Queue"
+                           jndi-name="queue/acsQueue">
+        <property name="Name" value="acsQueue"/>
+    </admin-object-resource>
+
+    <!-- MariaDB/MySQL Datasource -->
+    <jdbc-connection-pool name="MySqlAcsPool"
+                          res-type="javax.sql.DataSource"
+                          datasource-classname="org.mariadb.jdbc.MariaDbDataSource">
+        <property name="serverName" value="localhost"/>
+        <property name="portNumber" value="3306"/>
+        <property name="databaseName" value="acs"/>
+        <property name="user" value="acs"/>
+        <property name="password" value="acs"/>
+    </jdbc-connection-pool>
+    <jdbc-resource pool-name="MySqlAcsPool"
+                   jndi-name="java:/ACS"/>
+</resources>
