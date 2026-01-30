@@ -5,9 +5,9 @@
         <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
             <name>acs-ejb</name>
             <minimum-ant-version>1.6</minimum-ant-version>
-            <included-library>file.reference.js.jar</included-library>
-            <included-library>file.reference.commons-httpclient-3.1.jar</included-library>
-            <included-library>file.reference.jboss-jaxrpc.jar</included-library>
+            <explicit-platform explicit-source-supported="true"/>
+            <included-library dirs="200">file.reference.js.jar</included-library>
+            <included-library dirs="200">file.reference.commons-httpclient-3.1.jar</included-library>
             <web-services>
                 <web-service>
                     <web-service-name>OpenACS</web-service-name>
