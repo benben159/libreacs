@@ -65,10 +65,6 @@
                     <file>${libs.RichFaces.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
-                <library dirs="200">
-                    <file>${libs.exceptionhandler-runtime.classpath}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
             </web-module-additional-libraries>
             <web-services/>
             <web-service-clients/>
